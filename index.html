@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Psanctuary Church Reading Room</title>
+<meta name="description" content="Psanctuary Church's public reading room on GitHub: the decks, procedures and proposals the church has chosen to share, and how to ask for access to the members' room.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.png">
+<link rel="canonical" href="https://psanctuarychurch.github.io/reading-room-public/">
+<meta property="og:site_name" content="Psanctuary Church on GitHub">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://psanctuarychurch.github.io/reading-room-public/">
+<meta property="og:title" content="Psanctuary Church Reading Room">
+<meta property="og:description" content="What the church has chosen to share with visitors, and how to ask for access to the members' room.">
+<meta property="og:image" content="https://psanctuarychurch.github.io/social-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap">
+<style>
+  :root {
+    --primary: #2563eb;  /* Psanctuary Church blue (my-template TONES.md) */
+    --deep: #1e3a8a;
+    --mid: #1d4ed8;
+    --tint: #dbeafe;
+    --for: #64748b;      /* the shared slate "For" tone */
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --line: #cbd5e1;
+    --link: #1d4ed8;
+    --band-text: #ffffff;
+    --chip-bg: var(--tint);
+    --chip-text: var(--deep);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1220;
+      --surface: #111a2e;
+      --text: #e2e8f0;
+      --muted: #a3b1c6;
+      --line: #23324f;
+      --link: #93c5fd;
+      --chip-bg: #1e3a8a;
+      --chip-text: #dbeafe;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1220; --surface: #111a2e; --text: #e2e8f0; --muted: #a3b1c6; --line: #23324f;
+    --link: #93c5fd; --chip-bg: #1e3a8a; --chip-text: #dbeafe;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 400 1.0625rem/1.6 Figtree, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--surface); color: var(--text); padding: 8px 12px; }
+  .skip:focus { left: 16px; top: 12px; z-index: 10; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+
+  header.band {
+    background: linear-gradient(160deg, var(--deep) 0%, #1e40af 55%, var(--mid) 100%);
+    color: var(--band-text); padding: 40px 0 36px;
+  }
+  .eyebrow { margin: 0 0 6px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; color: #bfdbfe; }
+  h1 { font-family: "Young Serif", Georgia, serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.15; margin: 0 0 12px; }
+  .lede { max-width: 62ch; margin: 0; color: #e0e7ff; font-size: 1.1rem; }
+  .band nav { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .band nav a {
+    color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,.45); border-radius: 999px;
+    padding: 6px 14px; font-weight: 500; font-size: .95rem;
+  }
+  .band nav a:hover { background: rgba(255,255,255,.12); }
+
+  main { padding: 36px 0 8px; }
+  section { margin: 0 0 28px; }
+  h2 {
+    font-family: "Young Serif", Georgia, serif; font-weight: 400; color: var(--text);
+    font-size: 1.5rem; margin: 0 0 4px; padding-bottom: 6px; border-bottom: 2px solid var(--primary);
+  }
+  .sub { color: var(--muted); margin: 8px 0 14px; max-width: 70ch; }
+  .cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--primary);
+    border-radius: 10px; padding: 16px 18px;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 1.08rem; font-weight: 700; }
+  .card p { margin: 0 0 10px; color: var(--muted); }
+  .card p:last-child { margin-bottom: 0; }
+  .chip {
+    display: inline-block; font-size: .8rem; font-weight: 600; padding: 2px 10px; border-radius: 999px;
+    background: var(--chip-bg); color: var(--chip-text);
+  }
+  .chip.slate { background: var(--for); color: #fff; }
+  ol.steps { padding-left: 1.3em; margin: 0; max-width: 70ch; }
+  ol.steps li { margin: 0 0 8px; }
+  #arrived ul { margin: 0; padding-left: 1.2em; }
+  #arrived li { margin: 0 0 4px; word-break: break-word; }
+  .note { background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; padding: 12px 16px; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); margin-top: 12px; padding: 18px 0 32px; color: var(--muted); font-size: .95rem; }
+  footer ul { list-style: none; padding: 0; margin: 0 0 10px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  @media (prefers-reduced-motion: no-preference) { .band nav a, a { transition: background-color .15s ease; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the reading room</a>
+
+<header class="band">
+  <div class="wrap">
+    <p class="eyebrow">Psanctuary Church on GitHub</p>
+    <h1>The reading room</h1>
+    <p class="lede">What the church has chosen to share with visitors: short walk-throughs, the procedures it keeps,
+      and the proposals that are ready to be read. Drafts are read first by the church's own people, in a members' room.</p>
+    <nav aria-label="On this page">
+      <a href="#decks">Decks</a>
+      <a href="#procedures">Procedures</a>
+      <a href="#proposals">Proposals</a>
+      <a href="#shared">Shared here</a>
+      <a href="#access">Ask for access</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <section id="decks" aria-labelledby="decks-h">
+    <h2 id="decks-h">Decks</h2>
+    <p class="sub">A few slides each, to read on a phone or present in a room.</p>
+    <div class="cards">
+      <article class="card">
+        <h3>Welcome to the church's GitHub home</h3>
+        <p>Proposals, procedures, this reading room and how to ask for access, in the church's blue.</p>
+        <p><span class="chip">being prepared</span></p>
+      </article>
+      <article class="card">
+        <h3><a href="https://github.com/drasticstatic/my-template/blob/main/decks/my-template-walkthrough.marp.pdf">How these pages are made</a></h3>
+        <p>The template behind every repository here, walked through on sixteen slides (a PDF, in the lab's brass on slate).</p>
+        <p><span class="chip">ready</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="procedures" aria-labelledby="procedures-h">
+    <h2 id="procedures-h">Procedures</h2>
+    <p class="sub">A procedure says how an approved thing is done, step by step. The church keeps its procedures for
+      its members; the ones its officers choose to share are copied to a public repository.</p>
+    <div class="cards">
+      <article class="card">
+        <h3><a href="https://github.com/psanctuarychurch/ops-standard-operating-procedures-public">The church's procedures, public copy</a></h3>
+        <p>No procedure has been shared yet. When an officer lists one, it appears there on its own.</p>
+        <p><span class="chip">none shared yet</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="proposals" aria-labelledby="proposals-h">
+    <h2 id="proposals-h">Proposals</h2>
+    <p class="sub">A proposal asks the church for a decision. Proposals are read and answered by the church's own
+      people first; there is no public preview of them yet. When one is ready for visitors, it is listed under
+      <a href="#shared">Shared here</a>.</p>
+  </section>
+
+  <section id="shared" aria-labelledby="shared-h">
+    <h2 id="shared-h">Shared here</h2>
+    <p class="sub">Every page the church's officers have chosen to copy into this room.</p>
+    <div id="arrived" class="note" aria-live="polite">
+      <p><strong>So far:</strong> <span id="arrived-status">nothing yet.</span></p>
+      <noscript><p>The list of shared pages is in
+        <a href="SYNCED-FROM-reading-room.txt">SYNCED-FROM-reading-room.txt</a> once anything has been shared.</p></noscript>
+    </div>
+  </section>
+
+  <section id="access" aria-labelledby="access-h">
+    <h2 id="access-h">Ask for access to the members' room</h2>
+    <p class="sub">The members' reading room is private. People the church's officers name are given read access
+      through a GitHub team called <span class="chip slate">readers</span>; nothing in it can be changed by a reader.</p>
+    <ol class="steps">
+      <li><strong>Write to the church</strong> at <a href="mailto:info@psanctuary.org">info@psanctuary.org</a> or through
+        <a href="https://www.psanctuary.org/contact">the contact form</a>, saying who you are and why you would like to read.</li>
+      <li><strong>Give your GitHub username</strong> when asked. Never send a password, a code or a key: nobody here will ask for one.</li>
+      <li><strong>Accept the invitation</strong> GitHub sends you (by email, or the bell icon on github.com), with
+        two-factor authentication turned on.</li>
+      <li><strong>Open the room</strong> in your browser. Every page has a PDF beside it, if you would rather print or send it on.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <ul>
+    <li><a href="https://www.psanctuary.org">psanctuary.org</a></li>
+    <li><a href="https://psanctuarychurch.github.io/">Entry portal</a></li>
+    <li><a href="https://psanctuarychurch.github.io/changelog-astro-public/">AstroLog</a></li>
+    <li><a href="https://github.com/psanctuarychurch/.github/blob/main/CONTACTS.md">Contacts</a></li>
+    <li><a href="https://github.com/psanctuarychurch/reading-room-public">This page's repository</a></li>
+  </ul>
+  <p>Psanctuary Church on GitHub. Pages shared here are copies made by an automatic, allowlisted sync from the church's
+    members' room; corrections are made there.</p>
+</footer>
+
+<script>
+  // List the pages the allowlisted sync has copied here (SYNCED-FROM-reading-room.txt, written by that sync).
+  (function () {
+    var status = document.getElementById('arrived-status');
+    if (!status || !window.fetch) return;
+    fetch('SYNCED-FROM-reading-room.txt', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.text() : ''; })
+      .then(function (text) {
+        var files = text.split('\n').map(function (l) { return l.trim(); })
+          .filter(function (l) { return l && l.charAt(0) !== '#'; });
+        if (!files.length) return;
+        status.textContent = files.length + (files.length === 1 ? ' page.' : ' pages.');
+        var ul = document.createElement('ul');
+        files.forEach(function (f) {
+          var li = document.createElement('li'), a = document.createElement('a');
+          a.href = f.split('/').map(encodeURIComponent).join('/');
+          a.textContent = f;
+          li.appendChild(a); ul.appendChild(li);
+        });
+        document.getElementById('arrived').appendChild(ul);
+      })
+      .catch(function () { /* nothing shared yet, or offline: the default text stands */ });
+  })();
+</script>
+</body>
+</html>
