@@ -106,6 +106,15 @@
   .note { background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; padding: 12px 16px; color: var(--muted); }
   footer { border-top: 1px solid var(--line); margin-top: 12px; padding: 18px 0 32px; color: var(--muted); font-size: .95rem; }
   footer ul { list-style: none; padding: 0; margin: 0 0 10px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  svg.i { width: 1em; height: 1em; vertical-align: -0.14em; margin-right: .35em; color: var(--primary); flex: none; }
+  h2 svg.i { color: var(--mid); }
+  header.band svg.i { color: #bfdbfe; }
+  .door { display: inline-flex; align-items: center; gap: 2px; margin-top: 22px; padding: 10px 16px; border-radius: 10px;
+    background: #ffffff; color: var(--deep); font-weight: 700; text-decoration: none; box-shadow: 0 1px 0 rgba(0,0,0,.15); }
+  header.band .door svg.i { color: var(--primary); }
+  .door:hover { background: var(--tint); }
+  .door-note { margin: 8px 0 0; color: #dbeafe; font-size: .92rem; max-width: 62ch; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) h2 svg.i { color: #93c5fd; } }
   @media (prefers-reduced-motion: no-preference) { .band nav a, a { transition: background-color .15s ease; } }
 </style>
 </head>
@@ -125,18 +134,22 @@
       <a href="#shared">Shared here</a>
       <a href="#access">Ask for access</a>
     </nav>
+    <a class="door" href="https://github.com/psanctuarychurch/reading-room"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4h3a2 2 0 0 1 2 2v14" /> <path d="M2 20h3" /> <path d="M13 20h9" /> <path d="M10 12v.01" /> <path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z" /></svg>Members: open the reading room</a>
+    <p class="door-note">The members' room is the door to everything: the church's proposals, procedures and decks,
+      each with its PDF. Sign in to GitHub first; if you are not yet in the <strong>readers</strong> team, GitHub shows a
+      404, and <a href="#access" style="color:#fff">asking for access</a> is the way in.</p>
   </div>
 </header>
 
 <main id="main" class="wrap">
 
   <section id="decks" aria-labelledby="decks-h">
-    <h2 id="decks-h">Decks</h2>
+    <h2 id="decks-h"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20" /> <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" /> <path d="m7 21 5-5 5 5" /></svg>Decks</h2>
     <p class="sub">A few slides each, to read on a phone or present in a room.</p>
     <div class="cards">
       <article class="card">
         <h3><a href="https://github.com/psanctuarychurch/.github/blob/main/decks/welcome.marp.pdf">Welcome to the church's GitHub home</a></h3>
-        <p>Proposals, procedures, this reading room and how to ask for access, on nine slides in the church's blue (a PDF, with <a href="https://github.com/psanctuarychurch/.github/blob/main/decks/welcome.marp.md">the markdown</a> beside it).</p>
+        <p>Seven stops from &ldquo;I have no GitHub account&rdquo; to &ldquo;I read, I answer, and my helper reads with me&rdquo;, and who to ask, in the church's blue (a PDF, with <a href="https://github.com/psanctuarychurch/.github/blob/main/decks/welcome.marp.md">the markdown</a> beside it).</p>
         <p><span class="chip">ready</span></p>
       </article>
       <article class="card">
@@ -148,27 +161,30 @@
   </section>
 
   <section id="procedures" aria-labelledby="procedures-h">
-    <h2 id="procedures-h">Procedures</h2>
+    <h2 id="procedures-h"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 12h-5" /> <path d="M15 8h-5" /> <path d="M19 17V5a2 2 0 0 0-2-2H4" /> <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" /></svg>Procedures</h2>
     <p class="sub">A procedure says how an approved thing is done, step by step. The church keeps its procedures for
       its members; the ones its officers choose to share are copied to a public repository.</p>
     <div class="cards">
       <article class="card">
         <h3><a href="https://github.com/psanctuarychurch/ops-standard-operating-procedures-public">The church's procedures, public copy</a></h3>
-        <p>No procedure has been shared yet. When an officer lists one, it appears there on its own.</p>
-        <p><span class="chip">none shared yet</span></p>
+        <p>Nine procedures are listed for visitors and arrive with the first copy: start with <strong>SOP-COM-001</strong>,
+          <em>New to GitHub: your first hour</em>; then how a change travels, pull requests, what may go public, the
+          reading room and your helper, and how GitHub collaboration works here. Each comes with its PDF.</p>
+        <p><span class="chip">listed, arriving</span></p>
       </article>
     </div>
   </section>
 
   <section id="proposals" aria-labelledby="proposals-h">
-    <h2 id="proposals-h">Proposals</h2>
+    <h2 id="proposals-h"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></svg>Proposals</h2>
     <p class="sub">A proposal asks the church for a decision. Proposals are read and answered by the church's own
-      people first; there is no public preview of them yet. When one is ready for visitors, it is listed under
-      <a href="#shared">Shared here</a>.</p>
+      people first, in the members' room. <strong>000 Start here</strong> (how a proposal reads, how to answer, how to
+      bring your AI helper) is listed for visitors and arrives with the first copy; anything else that is ready is
+      listed under <a href="#shared">Shared here</a>.</p>
   </section>
 
   <section id="shared" aria-labelledby="shared-h">
-    <h2 id="shared-h">Shared here</h2>
+    <h2 id="shared-h"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7h-3a2 2 0 0 1-2-2V2" /> <path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z" /> <path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8" /></svg>Shared here</h2>
     <p class="sub">Every page the church's officers have chosen to copy into this room.</p>
     <div id="arrived" class="note" aria-live="polite">
       <p><strong>So far:</strong> <span id="arrived-status">nothing yet.</span></p>
@@ -178,7 +194,7 @@
   </section>
 
   <section id="access" aria-labelledby="access-h">
-    <h2 id="access-h">Ask for access to the members' room</h2>
+    <h2 id="access-h"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4h3a2 2 0 0 1 2 2v14" /> <path d="M2 20h3" /> <path d="M13 20h9" /> <path d="M10 12v.01" /> <path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z" /></svg>Ask for access to the members' room</h2>
     <p class="sub">The members' reading room is private. People the church's officers name are given read access
       through a GitHub team called <span class="chip slate">readers</span>; nothing in it can be changed by a reader.</p>
     <ol class="steps">
@@ -187,7 +203,10 @@
       <li><strong>Give your GitHub username</strong> when asked. Never send a password, a code or a key: nobody here will ask for one.</li>
       <li><strong>Accept the invitation</strong> GitHub sends you (by email, or the bell icon on github.com), with
         two-factor authentication turned on.</li>
-      <li><strong>Open the room</strong> in your browser. Every page has a PDF beside it, if you would rather print or send it on.</li>
+      <li><strong>Open the room</strong> at <a href="https://github.com/psanctuarychurch/reading-room">github.com/psanctuarychurch/reading-room</a>
+        in your browser. Every page has a PDF beside it, if you would rather print or send it on.</li>
+      <li><strong>New to GitHub?</strong> The welcome deck above walks the same road, and <strong>SOP-COM-001</strong>
+        (among the procedures) is your first hour, step by step.</li>
     </ol>
   </section>
 
@@ -199,6 +218,7 @@
     <li><a href="https://psanctuarychurch.github.io/">Entry portal</a></li>
     <li><a href="https://psanctuarychurch.github.io/changelog-astro-public/">AstroLog</a></li>
     <li><a href="https://github.com/psanctuarychurch/.github/blob/main/CONTACTS.md">Contacts</a></li>
+    <li><a href="https://github.com/psanctuarychurch/reading-room">Members' room</a></li>
     <li><a href="https://github.com/psanctuarychurch/reading-room-public">This page's repository</a></li>
   </ul>
   <p>Psanctuary Church on GitHub. Pages shared here are copies made by an automatic, allowlisted sync from the church's
